@@ -23,7 +23,7 @@ class HomeController extends Controller
         $parentCategories = Category::whereNull('parent_id')->with('children')->get();
 
         $ShoppingCart = ShoppingCart::latest('id')->value('id');
-        return view('home.index', compact('parentCategories', 'categories', 'products', 'searchers','userId','ShoppingCart'));
+        return view('mylayout.app', compact('parentCategories', 'categories', 'products', 'searchers','userId','ShoppingCart'));
     }
     public function search(Request $request)
     {

@@ -37,4 +37,12 @@ class HomeController extends Controller
 
         return view('home.search', compact('products', 'query', 'categories'));
     }
+    public function creatcart()
+    {
+        $shoppingcart = ShoppingCart::all();
+        $userId = auth()->id();
+        ShoppingCart::firstOrCreate([
+            'user_id' => $userId
+        ]);
+    }
 }

@@ -82,7 +82,7 @@ Route::get('/cart/index/{ShoppingCart}', [CartController::class, 'show'])->name(
 
 Route::post('/order/{ShoppingCart}/{id}', [OrderController::class, 'AddOrder'])->name('order.add');
 Route::get('/order/index', [OrderController::class, 'index'])->name('order.index');
-
+Route::post('/creatcart',[HomeController::class,'creatcart'])->name('cart.button');
 
 
 require __DIR__ . '/auth.php';

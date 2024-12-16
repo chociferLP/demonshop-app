@@ -1,7 +1,7 @@
 ### ToDo For this Week ###
 
 - [] Show the lastest cart *( for the logged in user )*
-- [] Seprate the views and create a layout for user side *( Check the admin panel too )*
+- [*] Seprate the views and create a layout for user side *( Check the admin panel too )*
 - [] Fix the search method 
 - [] Create a delete method for shopping cart
 - [] Add categories update to product edit method

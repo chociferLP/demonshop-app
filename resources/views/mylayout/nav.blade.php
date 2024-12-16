@@ -1,5 +1,5 @@
-@extends('mylayout.header')
-@section('navbar')
+@extends('mylayout.app')
+@section('main')
     <div class="main_navigation hide_cat" dir="rtl">
         <div class="container-fluid">
             <div class="row">
@@ -43,5 +43,5 @@
             </div>
         </div>
     </div>
-    @yield('body')
+
 @endsection

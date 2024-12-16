@@ -1,5 +1,5 @@
-@extends('mylayout.nav')
-@section('body')
+@extends('mylayout.app')
+@section('main')
     <section class="section-padding">
         <div class="container-fluid">
             <div class="section-header">

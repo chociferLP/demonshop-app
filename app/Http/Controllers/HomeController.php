@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\DB;
 class HomeController extends Controller
 {
     public function index()
-    {
+    {   $shoppingcart = ShoppingCart::all();
         $userId = auth()->id();
         $searchers = Category::with('products')
             ->get()
@@ -23,7 +23,9 @@ class HomeController extends Controller
         $parentCategories = Category::whereNull('parent_id')->with('children')->get();
 
         $ShoppingCart = ShoppingCart::latest('id')->value('id');
-        return view('home.index', compact('parentCategories', 'categories', 'products', 'searchers','userId','ShoppingCart'));
+        return view('home.index', compact('parentCategories', 'categories',
+         'products', 'searchers','userId','ShoppingCart',
+        'shoppingcart'));
     }
     public function search(Request $request)
     {

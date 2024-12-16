@@ -11,7 +11,8 @@ use Illuminate\Support\Facades\DB;
 class HomeController extends Controller
 {
     public function index()
-    {   $shoppingcart = ShoppingCart::all();
+    {
+        $shoppingcart = ShoppingCart::where('user_id');
         $userId = auth()->id();
         $searchers = Category::with('products')
             ->get()
@@ -41,7 +42,7 @@ class HomeController extends Controller
     }
     public function creatcart()
     {
-        $shoppingcart = ShoppingCart::all();
+        $shoppingcart = ShoppingCart::where('user_id');
         $userId = auth()->id();
         ShoppingCart::firstOrCreate([
             'user_id' => $userId

@@ -1,0 +1,45 @@
+@font-face {
+    font-family: irs;
+    font-style: normal;
+    font-weight: bold;
+    src: url('../fonts/iransans/eot/_Bold.eot');
+    src: url('../fonts/iransans/eot/_Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/iransans/woff2/_Bold.woff2') format('woff2'), url('../fonts/iransans/woff/_Bold.woff') format('woff'), url('../fonts/iransans/ttf/_Bold.ttf') format('truetype')
+}
+
+@font-face {
+    font-family: irs;
+    font-style: normal;
+    font-weight: 500;
+    src: url('../fonts/iransans/eot/IRANSansWeb.eot');
+    src: url('../fonts/iransans/eot/IRANSansWeb.eot?#iefix') format('embedded-opentype'), url('../fonts/iransans/woff2/_IRANSansWeb.woff') format('woff2'), url('../fonts/iransans/woff/_IRANSansWeb.woff') format('woff'), url('../fonts/iransans/ttf/_IRANSansWeb.ttf') format('truetype')
+}
+
+@font-face {
+    font-family: irs;
+    font-style: normal;
+    font-weight: 300;
+    src: url('../fonts/iransans/eot/_Light.eot');
+    src: url('../fonts/iransans/eot/_Light.eot?#iefix') format('embedded-opentype'), url('../fonts/iransans/woff2/_Light.woff2') format('woff2'), url('../fonts/iransans/woff/_Light.woff') format('woff'), url('../fonts/iransans/ttf/_Light.ttf') format('truetype')
+}
+
+/* @font-face {
+    font-family: irs;
+    font-style: normal;
+    font-weight: 200;
+    src: url('../fonts/iransans/eot/_UltraLight.eot');
+    src: url('../fonts/iransans/eot/_UltraLight.eot?#iefix') format('embedded-opentype'), url('../fonts/iransans/woff2/_UltraLight.woff2') format('woff2'), url('../fonts/iransans/woff/_UltraLight.woff') format('woff'), url('../fonts/iransans/ttf/_UltraLight.ttf') format('truetype')
+} */
+
+@font-face {
+    font-family: irs;
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/iransans/eot/.eot');
+    src: url('../fonts/iransans/eot/.eot?#iefix') format('embedded-opentype'), url('../fonts/iransans/woff2/.woff2') format('woff2'), url('../fonts/iransans/woff/.woff') format('woff'), url('../fonts/iransans/ttf/.ttf') format('truetype')
+}
+
+@font-face {
+    font-family: digikala;
+    src: url('../fonts/digikala/digikala.eot');
+    src: url('../fonts/digikala/digikala.eot?#iefix') format('embedded-opentype'), url('../fonts/digikala/digikala.woff2') format('woff2'), url('../fonts/digikala/digikala.woff') format('woff'), url('../fonts/digikala/digikala.ttf') format('truetype')
+}

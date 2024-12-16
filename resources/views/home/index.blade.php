@@ -118,7 +118,7 @@
                             @endguest
                             <form action="{{ route('cart.button') }}" method="POST">
                                 @csrf
-                                @if ($shoppingcart != $userId)
+                                @if ($shoppingcart = $userId)
                                     <button type="submit" class="btn btn-sucsses">افزودن سبد خرید</button>
                                 @endif
                             </form>

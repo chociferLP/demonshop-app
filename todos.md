@@ -1,6 +1,6 @@
 ### ToDo For this Week ###
 
-- [] Show the lastest cart *( for the logged in user )*
+- [] Show the lastest cart *( for the logged in user )* -> # (  سه شنبه  27 آذر) #
 - [*] Seprate the views and create a layout for user side *( Check the admin panel too )*
 - [] Fix the search method 
 - [] Create a delete method for shopping cart

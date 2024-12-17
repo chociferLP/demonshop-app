@@ -76,7 +76,7 @@ Route::get('/products/search', [ProductController::class, 'search'])->name('prod
 
 Route::post('/cart/item/{cart}/{product}', [CartController::class, 'additem'])->name('item.add');
 Route::post('/cart/{ShoppingCart}', [CartController::class, 'add'])->name('cart.add');
-Route::get('/cart/index/{ShoppingCart}', [CartController::class, 'show'])->name('cart.show');
+Route::get('/cart/index/{ShoppingCart}/{user}', [CartController::class, 'show'])->middleware(['auth'])->name('cart.show');
 
 
 

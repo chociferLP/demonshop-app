@@ -47,5 +47,6 @@ class HomeController extends Controller
         ShoppingCart::firstOrCreate([
             'user_id' => $userId
         ]);
+        return redirect()->back();
     }
 }

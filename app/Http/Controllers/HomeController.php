@@ -12,6 +12,8 @@ class HomeController extends Controller
 {
     public function index()
     {
+        $user = auth()->user();
+        $hasCart = $user->shoppingCart()->exists();
         $shoppingcart = ShoppingCart::where('user_id');
         $userId = auth()->id();
         $searchers = Category::with('products')
@@ -24,9 +26,15 @@ class HomeController extends Controller
         $parentCategories = Category::whereNull('parent_id')->with('children')->get();
 
         $ShoppingCart = ShoppingCart::latest('id')->value('id');
-        return view('home.index', compact('parentCategories', 'categories',
-         'products', 'searchers','userId','ShoppingCart',
-        'shoppingcart'));
+        return view('home.index', compact(
+            'parentCategories',
+            'categories',
+            'products',
+            'searchers',
+            'userId',
+            'ShoppingCart',
+            'shoppingcart'
+        ));
     }
     public function search(Request $request)
     {

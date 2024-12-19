@@ -116,12 +116,12 @@
                                     <a href="{{ route('dashboard') }}">پروفایل </a>
                                 </li>
                             @endguest
-                            <form action="{{ route('cart.button') }}" method="POST">
-                                @csrf
-                                @if ($shoppingcart = $userId)
+                            @if (!$hasCart)
+                                <form action="{{ route('cart.button') }}" method="POST">
+                                    @csrf
                                     <button type="submit" class="btn btn-sucsses">افزودن سبد خرید</button>
-                                @endif
-                            </form>
+                                </form>
+                            @endif
 
                             <form action="{{ route('cart.add', $ShoppingCart) }}" method="POST">
                                 @method('POST')

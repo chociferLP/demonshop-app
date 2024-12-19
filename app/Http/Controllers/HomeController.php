@@ -24,7 +24,6 @@ class HomeController extends Controller
         $products = Product::all();
         $categories = Category::all();
         $parentCategories = Category::whereNull('parent_id')->with('children')->get();
-
         $ShoppingCart = ShoppingCart::latest('id')->value('id');
         return view('home.index', compact(
             'parentCategories',

@@ -12,9 +12,6 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $user = auth()->user();
-        $hasCart = $user->shoppingCart()->exists();
-        $shoppingcart = ShoppingCart::where('user_id');
         $userId = auth()->id();
         $searchers = Category::with('products')
             ->get()

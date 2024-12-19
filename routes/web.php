@@ -75,7 +75,7 @@ Route::delete('/products/{id}', [ProductController::class, 'destroy'])->name('pr
 Route::get('/products/search', [ProductController::class, 'search'])->name('products.search');
 
 Route::post('/cart/item/{cart}/{product}', [CartController::class, 'additem'])->name('item.add');
-Route::post('/cart/{ShoppingCart}', [CartController::class, 'add'])->name('cart.add');
+Route::post('/cart', [CartController::class, 'add'])->name('cart.add');
 Route::get('/cart/index/{ShoppingCart}/{user}', [CartController::class, 'show'])->middleware(['auth'])->name('cart.show');
 
 

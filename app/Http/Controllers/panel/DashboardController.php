@@ -18,8 +18,6 @@ class DashboardController extends Controller
     {
         $users_count = User::count();
         $categories_count = Category::count();
-        $posts_count = Post::count();
-        $comments_count = Comment::count();
         $productsCount = Product::count();
         if (auth()->user()->role === 'author') {
             $posts_count = Post::where('user_id', auth()->user()->id)->count();
@@ -28,10 +26,8 @@ class DashboardController extends Controller
             })->count();
         }
         return view('panel.users.index', compact(
-            'users_count',
-            'posts_count',
-            'categories_count',
-            'comments_count',
+        'users_count',
+    'categories_count',
             'productsCount',
         ));
     }

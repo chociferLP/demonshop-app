@@ -33,7 +33,8 @@ class HomeController extends Controller
             'searchers',
             'userId',
             'ShoppingCart',
-            'shoppingcart'
+            'shoppingcart',
+            'hasCart'
         ));
     }
     public function search(Request $request)

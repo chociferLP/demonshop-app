@@ -26,8 +26,8 @@ class DashboardController extends Controller
             })->count();
         }
         return view('panel.users.index', compact(
-        'users_count',
-    'categories_count',
+            'users_count',
+            'categories_count',
             'productsCount',
         ));
     }

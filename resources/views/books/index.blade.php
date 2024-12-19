@@ -222,10 +222,6 @@
             @endforeach
         </div>
     </section>
-
-
-
-
     <script data-cfasync="false" src="{{ asset('static/js/email-decode.min.js') }}"></script>
     <script src="{{ asset('static/js/jquery-3.6.0.min.js') }}"></script>
     <script src="{{ asset('static/js/bootstrap.bundle.min.jsstatic/js/bootstrap.bundle.min.js') }}"></script>

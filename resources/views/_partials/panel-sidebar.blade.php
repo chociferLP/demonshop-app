@@ -63,9 +63,5 @@
                 </li>
             @endif
         </ul>
-        {{-- <div class="copyright">
-            <p><strong>داشبورد مدیریت رمزارز Boltz</strong>© 2021 All Rights Reserved</p>
-            <p class="fs-12">ساخته شده با<span class="heart"></span>توسط DexignZone</p>
-        </div> --}}
     </div>
 </div>

@@ -12,8 +12,6 @@ class CreateCategoriesTable extends Migration
             $table->id(); // Auto-incrementing primary key
             $table->string('name'); // Category name
             $table->string('slug')->unique(); // Unique slug for the category
-            $table->foreignId('parent_id')->nullable()->constrained('categories')->onDelete('cascade');
-            
             $table->timestamps();
             $table->softDeletes();
         });

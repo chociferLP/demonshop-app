@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Panel;
 
 use App\Models\Category;
 use App\Http\Controllers\Controller;
+
 use Illuminate\Support\Facades\Request;
 use App\Http\Requests\Panel\Category\CategoryCreateRequest;
 use App\Http\Requests\Panel\Category\CategoryUpdateRequest;
@@ -40,12 +41,12 @@ class CategoryController extends Controller
     {
         // Find the category or fail if it doesn't exist
 
-
+        dd($request->all());
+        $category = Category::findOrFail($id);
         $request->validate([
             'name' => ['required','string'],
             'slug' => ['required','string'],
         ]);
-        $category = Category::findOrFail($id);
         $category->update([
             'name' => $request->input('name'),
             'slug' => $request->input('slug'),

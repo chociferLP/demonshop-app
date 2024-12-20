@@ -76,11 +76,11 @@ Route::get('/products/search', [ProductController::class, 'search'])->name('prod
 
 Route::post('/cart/item/{cart}/{product}', [CartController::class, 'additem'])->name('item.add');
 Route::post('/cart', [CartController::class, 'add'])->name('cart.add');
-Route::get('/cart/index/{ShoppingCart}/{user}', [CartController::class, 'show'])->middleware(['auth'])->name('cart.show');
+Route::get('/cart/index/{user}', [CartController::class, 'show'])->middleware(['auth'])->name('cart.show');
 
 
 
-Route::post('/order/{ShoppingCart}/{id}', [OrderController::class, 'AddOrder'])->name('order.add');
+Route::post('/order', [OrderController::class, 'AddOrder'])->name('order.add');
 Route::get('/order/index', [OrderController::class, 'index'])->name('order.index');
 Route::post('/creatcart',[HomeController::class,'creatcart'])->name('cart.button');
 

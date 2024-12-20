@@ -17,7 +17,7 @@ class CartController extends Controller
     public function add(Request $request, ShoppingCart $ShoppingCart, User $user)
     {
         $user = auth()->id();
-        return redirect()->route('cart.show', compact('ShoppingCart', 'user'));
+        return redirect()->route('cart.show', compact( 'user'));
     }
     public function show(ShoppingCart $ShoppingCart, Order $order, User $user)
     {

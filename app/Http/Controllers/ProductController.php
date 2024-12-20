@@ -14,10 +14,10 @@ use App\Http\Requests\Panel\Category\ProductCreateRequest;
 
 class ProductController extends Controller
 {
-    public function index(Request $request,Product $product,ShoppingCart $cart)
+    public function index(Request $request, Product $product, ShoppingCart $cart)
     {
 
-        $sum = [$product,$cart];
+        $sum = [$product, $cart];
         $sortOption = $request->input('sort', 'price_asc');
         $categories = Category::all();
         $search = $request->input('search');
@@ -43,7 +43,7 @@ class ProductController extends Controller
 
         $cart = ShoppingCart::latest('id')->value('id');
 
-        return view('books.index', compact('products', 'categories', 'search','sum','cart'));
+        return view('books.index', compact('products', 'categories', 'search', 'sum', 'cart'));
     }
     private function getSortColumn($sortOption)
     {
@@ -101,6 +101,7 @@ class ProductController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'description' => ['required', 'string', 'max:255'],
             'price' => ['required', 'string', 'max:255'],
+            'category_id' => 'required|exists:categories,id',
         ]);
 
         $product = Product::findOrFail($id);
@@ -108,6 +109,7 @@ class ProductController extends Controller
             'name' => $request->input('name'),
             'description' => $request->input('description'),
             'price' => $request->input('price'),
+            'category_id' => $request->input('category_id'),
         ]);
         return redirect()->route('product.show')->with('success', 'Product updated successfully.');
     }
@@ -132,7 +134,7 @@ class ProductController extends Controller
         $products = $category->products()->paginate(10);
 
         // Return the view with the category and its products
-        return view('books.index', compact('category', 'products', 'showSearchBox', 'user','cart'));
+        return view('books.index', compact('category', 'products', 'showSearchBox', 'user', 'cart'));
     }
 
 }

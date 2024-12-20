@@ -56,7 +56,7 @@ Route::put('/update/{user}', [UserController::class, 'update'])->name('admin.use
 Route::get('/category/create', [CategoryController::class, 'index'])->name('category.index');
 Route::post('/category/create', [CategoryController::class, 'store'])->name('category.store');
 Route::delete('/delete/category/{id}', [CategoryController::class, 'destroy'])->name('category.delete');
-Route::get('/category/edit', [CategoryController::class, 'edit'])->name('category.edit');
+Route::get('/category/edit/{category}', [CategoryController::class, 'edit'])->name('category.edit');
 Route::put('/category/update', [CategoryController::class, 'update'])->name('category.update');
 
 
@@ -68,6 +68,8 @@ Route::get('/product/show', [ProductController::class, 'show'])->name('product.s
 
 
 Route::get('/categories/{id}/products', [ProductController::class, 'productsByCategory'])->name('categories.products');
+Route::put('/categories/{id}', [CategoryController::class, 'update'])->name('categories.update');
+
 
 Route::get('/products/{id}/edit', [ProductController::class, 'edit'])->name('products.edit');
 Route::put('/products/{id}', [ProductController::class, 'update'])->name('products.update');

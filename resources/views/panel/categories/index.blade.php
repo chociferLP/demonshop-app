@@ -31,6 +31,14 @@
                             </form>
                         @endif
                     </td>
+                    <td>
+                        @if (auth()->user()->role === 'admin')
+                            <form action="{{ route('category.edit', $category) }}" method="GET">
+                                <button class="btn"><img src="{{ asset('images/button/crud/edit.png') }}"
+                                        alt="Logo" style="height: 20px;"></button>
+                            </form>
+                        @endif
+                    </td>
                 </tr>
             @endforeach
         </tbody>

@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Panel;
 
-use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Request;
 use App\Http\Requests\Panel\Category\CategoryCreateRequest;
 use App\Http\Requests\Panel\Category\CategoryUpdateRequest;
 
@@ -31,21 +32,28 @@ class CategoryController extends Controller
 
     public function edit(Category $category)
     {
-        $parentCategories = Category::where('category_id', null)->where('id', '!=', $category->id)->get();
 
-        return view('panel.categories.edit', compact('category', 'parentCategories'));
+        return view('panel.categories.edit', compact('category'));
     }
 
-    public function update(CategoryUpdateRequest $request, Category $category)
+    public function update(Request $request, $id)
     {
-        $category->update(
-            $request->validated()
-        );
+        // Find the category or fail if it doesn't exist
 
-        session()->flash('status', 'دسته بندی به درستی اپدیت شد!');
 
-        return redirect()->route('categories.index');
+        $request->validate([
+            'name' => ['required','string'],
+            'slug' => ['required','string'],
+        ]);
+        $category = Category::findOrFail($id);
+        $category->update([
+            'name' => $request->input('name'),
+            'slug' => $request->input('slug'),
+        ]);
+
+        return redirect()->route('category.index');
     }
+
 
     public function destroy(Category $id)
     {

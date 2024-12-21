@@ -13,7 +13,7 @@
                                                                             |
                         *{{ یه باگ تو آخرای کار مونده }}*       <-----------|
 - [] Admin can Change the offer value 
-- [] Change all of the numbers format *( except mobile )* 
+- [] Change all of the numbers format to int *( except mobile )* 
 
 
 

@@ -125,7 +125,7 @@ class ProductController extends Controller
         $cart = ShoppingCart::latest('id')->value('id');
 
         // dd($id);
-        $user = User::findOrFail($id);
+        // $user = User::findOrFail($id);
         $categoriess = Category::all();
         $showSearchBox = Product::whereNotNull('category_id')->exists();
         // Get the category and its products
@@ -135,7 +135,7 @@ class ProductController extends Controller
         $products = $category->products()->paginate(10);
 
         // Return the view with the category and its products
-        return view('books.index', compact('category', 'products', 'showSearchBox', 'user', 'cart'));
+        return view('books.index', compact('category', 'products', 'showSearchBox', 'cart'));
     }
 
 }

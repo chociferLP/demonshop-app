@@ -198,7 +198,7 @@
                         <div class="original-price">
                             <span id="price"> هزار تومان : {{ number_format($product->price, 2) }} <br></span>
                         </div>
-                        @dd((int)$product->price)
+                        
                         <del>
                             <span>هزار تومان : {{ number_format($product->price + 50, 2) }}</span>
                         </del>

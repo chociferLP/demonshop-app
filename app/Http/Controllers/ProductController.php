@@ -124,6 +124,7 @@ class ProductController extends Controller
     {
         $cart = ShoppingCart::latest('id')->value('id');
 
+        // dd($id);
         $user = User::findOrFail($id);
         $categoriess = Category::all();
         $showSearchBox = Product::whereNotNull('category_id')->exists();

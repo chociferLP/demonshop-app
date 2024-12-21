@@ -7,7 +7,7 @@
 - [*] Add categories update to product edit method
 - [*] Show create shopping cart to *( User if he/her dose not have a cart or all of his/her carts are closed )*
 - [] Edite profile method for users *( User could not give himself/herself role )*
-- [] Edite method for categories in admin panel-----------------------------|
+- [*] Edite method for categories in admin panel-----------------------------|
                                                                             |
                                                                             |
                                                                             |

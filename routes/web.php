@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EditUserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CartController;
@@ -26,11 +27,7 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['au
 
 
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
+
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::middleware(['role:admin'])->group(function () {
@@ -86,5 +83,6 @@ Route::post('/order', [OrderController::class, 'AddOrder'])->name('order.add');
 Route::get('/order/index', [OrderController::class, 'index'])->name('order.index');
 Route::post('/creatcart',[HomeController::class,'creatcart'])->name('cart.button');
 
+Route::get('/user/edit',[EditUserController::class,'page'])->name('edit.user');
 
 require __DIR__ . '/auth.php';

@@ -55,8 +55,12 @@ class CartController extends Controller
         $cartid = ShoppingCart::all();
         return redirect()->back();
     }
-    public function destroy()
+    // public function destroy()
+    // {
+
+    // }
+    public function showPanel()
     {
-        
+        return view('panel.cart.list');
     }
 }

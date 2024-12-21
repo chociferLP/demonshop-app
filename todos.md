@@ -8,10 +8,10 @@
 - [*] Show create shopping cart to *( User if he/her dose not have a cart or all of his/her carts are closed )*
 - [] Edite profile method for users *( User could not give himself/herself role )*
 - [*] Edite method for categories in admin panel-----------------------------|
-                                                                            |
-                                                                            |
-                                                                            |
-                        *{{ یه باگ تو آخرای کار مونده }}*       <-----------|
+                                                                             |
+                                                                             |
+                                                                             |
+                        *{{ یه باگ تو آخرای کار مونده }}*        <-----------|
 - [] Admin can Change the offer value 
 - [] Change all of the numbers format to int *( except mobile )* 
 

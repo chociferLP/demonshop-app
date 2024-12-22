@@ -9,6 +9,6 @@ class EditUserController extends Controller
 {
     public function page(User $user)
     {
-        return view('user.profile');
+        return view('user.profile',compact('user'));
     }
 }

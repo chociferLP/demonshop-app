@@ -7,6 +7,7 @@
                     <div class="section">
                         <div class="user_info_box">
                             <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
                             <form action="#" method="POST" class="user_form">
                                 <div class="row">
                                     <div class="col-md-6">

@@ -14,9 +14,10 @@ class UserController extends Controller
 {
     public function index()
     {
+        $id = auth()->id();
         $users = User::paginate(5);
 
-        return view('panel.users.crud.index', compact('users'));
+        return view('panel.users.crud.index', compact('users','id'));
     }
 
     public function create()
@@ -56,5 +57,5 @@ class UserController extends Controller
 
         return back();
     }
-    
+
 }

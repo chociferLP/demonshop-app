@@ -16,6 +16,7 @@ class DashboardController extends Controller
 {
     public function index()
     {
+        $user = auth()->user();
         $users_count = User::count();
         $categories_count = Category::count();
         $productsCount = Product::count();
@@ -29,6 +30,7 @@ class DashboardController extends Controller
             'users_count',
             'categories_count',
             'productsCount',
+            'user',
         ));
     }
 }

@@ -54,7 +54,7 @@
                         <form action="{{ route('slash') }}" method="GET">
                             <button class="btn">خانه</button>
                         </form>
-                        <form action="{{ route('edit.user') }}" method="GET">
+                        <form action="{{ route('edit.user',$user) }}" method="GET">
                             @csrf
                             <button class="btn">مشخصات کاربر</button>
                         </form>

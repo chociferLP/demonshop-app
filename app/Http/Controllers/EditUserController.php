@@ -7,8 +7,10 @@ use Illuminate\Http\Request;
 
 class EditUserController extends Controller
 {
-    public function page(User $user)
+    public function page()
     {
+        $user = auth()->user();
+
         return view('user.profile',compact('user'));
     }
 }

@@ -11,6 +11,18 @@ class EditUserController extends Controller
     {
         $user = auth()->user();
 
-        return view('user.profile',compact('user'));
+        return view('user.profile', compact('user'));
+    }
+    public function update(Request $request, $id)
+    {
+
+
+        $user = User::findOrFail($id);
+        $user->update([
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'phone' => $request->input('phone')
+        ]);
+        return redirect()->back();
     }
 }

@@ -84,5 +84,6 @@ Route::get('/order/index', [OrderController::class, 'index'])->name('order.index
 Route::post('/creatcart',[HomeController::class,'creatcart'])->name('cart.button');
 
 Route::get('/user/edit/{id}',[EditUserController::class,'page'])->name('edit.user');
+Route::post('/user/edit',[EditUserController::class,'update'])->name('update.user');
 
 require __DIR__ . '/auth.php';

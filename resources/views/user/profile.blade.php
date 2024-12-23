@@ -41,7 +41,9 @@
                             </div>
                             <label style="color: black">ویرایش اطلاعات کاربری</label>
                             <br>
-                            <form action="#" method="POST" class="user_form">
+                            <form action="{{ route('update.user') }}" method="POST" class="user_form">
+                                
+                                @csrf
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
@@ -65,7 +67,7 @@
                                         <div class="form-group">
                                             <label style="color: black">شماره تماس جدید :</label>
                                             <input style="background-color: rgb(241, 241, 120)" type="text"
-                                                name="mobile" class="form-control form-control-custom"
+                                                name="phone" class="form-control form-control-custom"
                                                 placeholder="شماره تماس" autocomplete="off" required="">
                                         </div>
                                     </div>

@@ -63,8 +63,9 @@ class CartController extends Controller
     {
         return view('panel.cart.list');
     }
-    public function destroyItem()
+    public function destroyItem($id)
     {
-        
+        $cartItem = CartItems::findOrFail($id); 
+        $cartItem->delete();
     }
 }

@@ -63,4 +63,8 @@ class CartController extends Controller
     {
         return view('panel.cart.list');
     }
+    public function destroyItem()
+    {
+        
+    }
 }

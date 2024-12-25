@@ -22,7 +22,6 @@ class CartController extends Controller
     public function show(ShoppingCart $ShoppingCart, Order $order, User $user)
     {
 
-
         $items = $ShoppingCart->ToCartItems()->with('product')->get();
 
 
@@ -65,7 +64,7 @@ class CartController extends Controller
     }
     public function destroyItem($id)
     {
-        $cartItem = CartItems::findOrFail($id); 
+        $cartItem = CartItems::findOrFail($id);
         $cartItem->delete();
     }
 }

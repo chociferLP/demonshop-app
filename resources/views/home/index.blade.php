@@ -120,7 +120,7 @@
                                 @csrf
                                 <button type="submit" class="btn btn-sucsses">افزودن سبد خرید</button>
                             </form>
-                            <form action="{{ route('cart.add', $ShoppingCart) }}" method="POST">
+                            <form action="{{ route('cart.add') }}" method="POST">
                                 @method('POST')
                                 @csrf
                                 <button class="btn btn-sucsses">سبد خرید</button>

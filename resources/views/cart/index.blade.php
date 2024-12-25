@@ -30,10 +30,8 @@
             <div class="row">
                 <div class="col-12">
                     <div class="table-responsive cart_table">
-
-
-
                         @foreach ($items as $item)
+                        
                             <table>
                                 <thead>
                                     <tr>

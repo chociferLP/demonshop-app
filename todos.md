@@ -22,7 +22,7 @@
                                                                              |
                         *{{ یه باگ تو آخرای کار مونده }}*        <-----------|
 
-- [] Change all of the numbers format to int *( except mobile )* 
+- [*] Change all of the numbers format to int *( except mobile )* 
 - فیکس کردن سفارشات
 
 

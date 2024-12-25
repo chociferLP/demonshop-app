@@ -47,10 +47,14 @@
                                 <tbody>
                                     <tr>
                                         <td class="remove">
-                                            <button class="remove-from-cart" type="button">
-                                                <span></span>
-                                                <span></span>
-                                            </button>
+                                            <form action="{{ route('destroy.cart') }}" method="POST">
+                                                @method('delete')
+                                                @csrf
+                                                <button class="remove-from-cart" type="button">
+                                                    <span></span>
+                                                    <span></span>
+                                                </button>
+                                            </form>
                                         </td>
                                         <td>
                                             <div class="cart_product">
@@ -93,7 +97,7 @@
         <div class="container-fluid">
             <div class="row justify-content-end">
                 <div class="col-lg-5">
-                    <form action="{{ route('order.add',[$ShoppingCart,$user]) }}" method="POST">
+                    <form action="{{ route('order.add', [$ShoppingCart, $user]) }}" method="POST">
                         @csrf
                         <button class="thm-btn btn-rectangle thm-bg-color-one w-100">پرداخت</button>
                     </form>

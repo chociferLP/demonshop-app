@@ -85,5 +85,6 @@ Route::post('/creatcart',[HomeController::class,'creatcart'])->name('cart.button
 
 Route::get('/user/edit/{id}',[EditUserController::class,'page'])->name('edit.user');
 Route::post('/user/edit',[EditUserController::class,'update'])->middleware('auth')->name('update.user');
+Route::delete('/cart/destroy',[CartController::class,'destroyItem'])->name('destroy.cart');
 
 require __DIR__ . '/auth.php';

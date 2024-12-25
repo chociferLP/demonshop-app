@@ -79,7 +79,7 @@ Route::get('/cart/index', [CartController::class, 'show'])->middleware(['auth'])
 Route::get('/cart/list',[CartController::class, 'showPanel'])->name('cart.panel');
 
 
-Route::post('/order', [OrderController::class, 'AddOrder'])->name('order.add');
+Route::post('/order/{ShoppingCart}', [OrderController::class, 'AddOrder'])->name('order.add');
 Route::get('/order/index', [OrderController::class, 'index'])->name('order.index');
 Route::post('/creatcart',[HomeController::class,'creatcart'])->name('cart.button');
 

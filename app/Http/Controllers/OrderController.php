@@ -15,12 +15,11 @@ class OrderController extends Controller
 {
     public function AddOrder(ShoppingCart $ShoppingCart)
     {
-        $totalPrice = 0;
         $items = $ShoppingCart->ToCartItems()->with('product')->get();
         $user = auth()->id();
-        $ShoppingCart = ShoppingCart::latest('id')->value('id');
+        $totalPrice = 0;
         $order = Order::create([
-            'cart_id' => $ShoppingCart,
+            'cart_id' => $ShoppingCart->id,
             'user_id'=> $user,
             'price' => 0
         ]);
@@ -42,8 +41,8 @@ class OrderController extends Controller
     }
     public function index(ShoppingCart $ShoppingCart)
     {
-        $ordercount = Order::count();
-        $price = Order::sum('price');
+        $ordercount = OrderItems::count();
+        $price = OrderItems::sum('price');
 
         $OrderItems = OrderItems::all();
         return view('order.index',['OrderItems'=>DB::table('order_items')->paginate(4)],compact('OrderItems','ordercount','price'));

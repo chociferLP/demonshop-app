@@ -95,7 +95,7 @@
         <div class="container-fluid">
             <div class="row justify-content-end">
                 <div class="col-lg-5">
-                    <form action="{{ route('order.add', [$ShoppingCart, $user]) }}" method="POST">
+                    <form action="{{ route('order.add', $ShoppingCart) }}" method="POST">
                         @csrf
                         <button class="thm-btn btn-rectangle thm-bg-color-one w-100">پرداخت</button>
                     </form>

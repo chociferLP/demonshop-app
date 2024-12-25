@@ -7,12 +7,12 @@
 - [*] Add categories update to product edit method
 - [*] Show create shopping cart to *( User if he/her dose not have a cart or all of his/her carts are closed )*
 - [*] Edite profile method for users *( User could not give himself/herself role )* --------------------------------------------------------|
-                                                                                                                                           |
-                                                                                                                                           |
-                                                                                                                                           |
-                                                                                                                                           |
-                                                                                                                                           |
-                                                                                                                                           |
+                                                                                                                                            |
+                                                                                                                                            |
+                                                                                                                                            |
+                                                                                                                                            |
+                                                                                                                                            |
+                                                                                                                                            |
                                                        *[{ افزودن قابلیت تغیر رمز }]*       <------------------------------|
 
 
@@ -23,7 +23,7 @@
                         *{{ یه باگ تو آخرای کار مونده }}*        <-----------|
 
 - [] Change all of the numbers format to int *( except mobile )* 
-
+- فیکس کردن سفارشات
 
 
 

@@ -19,9 +19,10 @@ class CartController extends Controller
         $user = auth()->id();
         return redirect()->route('cart.show', compact( 'user'));
     }
-    public function show(ShoppingCart $ShoppingCart, Order $order, User $user)
+    public function show( Order $order, User $user)
     {
-
+        $ShoppingCart = ShoppingCart::latest('id')->get()->first();
+        // dd($ShoppingCart);
         $items = $ShoppingCart->ToCartItems()->with('product')->get();
 
 

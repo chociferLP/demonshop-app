@@ -31,7 +31,7 @@
                 <div class="col-12">
                     <div class="table-responsive cart_table">
                         @foreach ($items as $item)
-                        
+
                             <table>
                                 <thead>
                                     <tr>
@@ -45,10 +45,10 @@
                                 <tbody>
                                     <tr>
                                         <td class="remove">
-                                            <form action="{{ route('destroy.cart') }}" method="POST">
+                                            <form action="{{ route('destroy.cart',$cartItem) }}" method="POST">
                                                 @method('delete')
                                                 @csrf
-                                                <button class="remove-from-cart" type="button">
+                                                <button class="remove-from-cart" type="submit">
                                                     <span></span>
                                                     <span></span>
                                                 </button>

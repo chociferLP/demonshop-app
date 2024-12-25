@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\CartItems;
 use App\Models\ShoppingCart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
-    public function index(ShoppingCart $ShoppingCart)
+    public function index(ShoppingCart $ShoppingCart,CartItems $cartItem)
     {
         $userId = auth()->id();
         $searchers = Category::with('products')
@@ -29,6 +30,7 @@ class HomeController extends Controller
             'searchers',
             'userId',
             'ShoppingCart',
+            'cartItem'
         ));
     }
     public function search(Request $request)

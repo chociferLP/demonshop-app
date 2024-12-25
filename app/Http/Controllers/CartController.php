@@ -14,19 +14,19 @@ use Illuminate\Support\Facades\Auth;
 class CartController extends Controller
 {
 
-    public function add(Request $request, ShoppingCart $ShoppingCart, User $user)
+    public function add(Request $request, ShoppingCart $ShoppingCart, User $user, CartItems $cartItem)
     {
         $user = auth()->id();
-        return redirect()->route('cart.show', compact( 'user'));
+        return redirect()->route('cart.show', compact('user'));
     }
-    public function show( Order $order, User $user)
+    public function show(Order $order, User $user)
     {
         $ShoppingCart = ShoppingCart::latest('id')->get()->first();
         // dd($ShoppingCart);
         $items = $ShoppingCart->ToCartItems()->with('product')->get();
+        $cartItem = CartItems::latest('id')->get()->first();
 
-
-        return view('cart.index', compact('items', 'ShoppingCart', 'user', 'order'));
+        return view('cart.index', compact('items', 'ShoppingCart', 'user', 'order', 'cartItem'));
     }
     public function additem(Request $request, ShoppingCart $cart, Product $product)
     {
@@ -63,9 +63,10 @@ class CartController extends Controller
     {
         return view('panel.cart.list');
     }
-    public function destroyItem($id)
+    public function destroyItem($id, CartItems $cartItem)
     {
         $cartItem = CartItems::findOrFail($id);
         $cartItem->delete();
+        return redirect()->back();
     }
 }

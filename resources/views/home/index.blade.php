@@ -145,64 +145,30 @@
             </div>
             <div class="fruits-slider row">
                 <div class="slide-item col-12">
-                    <div class="product_block ">
-                        <div class="product_image">
-                            <a href="shop-details.html">
-                                <img src="static/picture/19.png" class="image-fit-contain" alt="img">
-                            </a>
-                            <ul class="social">
-                                <li>
-                                    <a href="" data-tip="quick view">
-                                        <i class="fa fa-eye" aria-hidden="true"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="" data-tip="quick view">
-                                        <i class="fa fa-cart-plus" aria-hidden="true"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="" data-tip="quick view">
-                                        <i class="fa fa-cube" aria-hidden="true"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="" data-tip="quick view">
-                                        <i class="fal fa-heart" aria-hidden="true"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <h4 class="title"><a href="shop-details.html">نام پیشرفته چگونه </a></h4>
-                        <div class="price">
-                            <span>55000 تومان</span>
-                            <span>80.25 تومان</span>
-                        </div>
-                        <div class="star-ratings">
-                            <ul class="rating">
-                                <li>
-                                    <i class="fa fa-star"></i>
-                                </li>
-                                <li>
-                                    <i class="fa fa-star"></i>
-                                </li>
-                                <li>
-                                    <i class="fa fa-star"></i>
-                                </li>
-                                <li>
-                                    <i class="fa fa-star-half" aria-hidden="true"></i>
-                                </li>
-                                <li>
-                                    <i class="fa fa-star-half" aria-hidden="true"></i>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="product_action">
-                            <button type="button" class="product_btn">خرید <i class="fal fa-plus"></i></button>
-                        </div>
-                    </div>
-                </div>
+                    @foreach ($mainproduct as $product)
+                        <div>
+                            @if ($product->profile_pic)
+                                <a href="">
+                                    <img src="{{ asset('storage/' . $product->profile_pic) }}"
+                                        class="image-fit-contain" alt="{{ $product->name }}"
+                                        style="max-width: 300px; height: auto;">
+                                </a>
+                            @endif
+                            <div class="original-price">
+                                <span id="price"> هزار تومان : {{ number_format($product->price, 2) }}
+                                    <br></span>
+                            </div>
 
+                            <del>
+                                <span>هزار تومان : {{ number_format($product->price + 50, 2) }}</span>
+                            </del>
+                        </div>
+                        <h4 class="title"><select class="btn" style="color: black" disabled
+                                name="items[0][product_id]" required>
+                                <option value="{{ $product->id }}">{{ $product->name }}</option>
+                            </select></h4>
+                    @endforeach
+                </div>
             </div>
         </div>
     </section>

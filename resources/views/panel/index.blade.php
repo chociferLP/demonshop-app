@@ -68,7 +68,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="ai-icon" href="" aria-expanded="false">
+                        <a class="ai-icon" href="{{ route('order.index') }}" aria-expanded="false">
                             <i class="flaticon-041-graph"></i>
                             <span class="nav-text">سفارشات</span>
                         </a>

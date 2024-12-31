@@ -23,8 +23,8 @@ class HomeController extends Controller
         $categories = Category::all();
         $parentCategories = Category::whereNull('parent_id')->with('children')->get();
         $ShoppingCart = ShoppingCart::latest('id')->value('id');
-        $mainproduct = Product::orderBy('price','DESC')->first();
-        
+        $mainproduct = Product::orderBy('price','DESC')->take(5)->get();
+
         return view('home.index', compact(
             'parentCategories',
             'categories',

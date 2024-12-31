@@ -141,33 +141,31 @@
     <section class="section-padding">
         <div class="container-fluid">
             <div class="section-header">
-                <h3 class="title"> محصولات پر فروش</h3>
+                <h3 class="title">گران ترین محصول</h3>
             </div>
             <div class="fruits-slider row">
                 <div class="slide-item col-12">
-                    @foreach ($mainproduct as $product)
-                        <div>
-                            @if ($product->profile_pic)
-                                <a href="">
-                                    <img src="{{ asset('storage/' . $product->profile_pic) }}"
-                                        class="image-fit-contain" alt="{{ $product->name }}"
-                                        style="max-width: 300px; height: auto;">
-                                </a>
-                            @endif
-                            <div class="original-price">
-                                <span id="price"> هزار تومان : {{ number_format($product->price, 2) }}
-                                    <br></span>
-                            </div>
-
-                            <del>
-                                <span>هزار تومان : {{ number_format($product->price + 50, 2) }}</span>
-                            </del>
+                    <div>
+                        @if ($mainproduct->profile_pic)
+                            <a href="">
+                                <img src="{{ asset('storage/' . $mainproduct->profile_pic) }}"
+                                    class="image-fit-contain" alt="{{ $mainproduct->name }}"
+                                    style="max-width: 300px; height: auto;">
+                            </a>
+                        @endif
+                        <div class="original-price">
+                            <span id="price"> هزار تومان : {{ number_format($mainproduct->price, 2) }}
+                                <br></span>
                         </div>
-                        <h4 class="title"><select class="btn" style="color: black" disabled
-                                name="items[0][product_id]" required>
-                                <option value="{{ $product->id }}">{{ $product->name }}</option>
-                            </select></h4>
-                    @endforeach
+
+                        <del>
+                            <span>هزار تومان : {{ number_format($mainproduct->price + 50, 2) }}</span>
+                        </del>
+                    </div>
+                    <h4 class="title"><select class="btn" style="color: black" disabled
+                            name="items[0][product_id]" required>
+                            <option value="{{ $mainproduct->id }}">{{ $mainproduct->name }}</option>
+                        </select></h4>
                 </div>
             </div>
         </div>

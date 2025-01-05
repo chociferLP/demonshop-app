@@ -98,7 +98,7 @@ Route::delete('/cart/destroy/{CartItems}', [CartController::class, 'destroyItem'
 
 
 
-Route::get('/ticket/index', [ticketController::class, 'index'])->name('ticket.index');
+Route::get('/ticket/index/{user}', [ticketController::class, 'index'])->name('ticket.index');
 
 
 

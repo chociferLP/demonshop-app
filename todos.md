@@ -60,12 +60,7 @@
                                                                                                         |
                                                                                                         |
     - [++] ساخت متد ها **( <store> , <index> , <show> , <update> , <destroy> , <changeStatus> )** <-----|
-                                                    |
-                                                    |
-                                                    |
-                                                    |
-                                                   \|/
-                      **( <search> , <uploadAttachment> , <addContent> , <export> )**
+                               
         - [] ساخت بخش فرانت صفحات  
         - [] ساخت رووت ها برای متد های تیکت
     - [*] ساخت مدل های تیکت ( <User> , <Category> , <Ticket> )

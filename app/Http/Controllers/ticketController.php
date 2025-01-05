@@ -13,7 +13,8 @@ class ticketController extends Controller
     public function index()
     {
         
-        return view('panel.ticket.index');
+        $user = auth()->id();
+        return view('panel.ticket.index',compact('user'));
     }
     public function show()
     {

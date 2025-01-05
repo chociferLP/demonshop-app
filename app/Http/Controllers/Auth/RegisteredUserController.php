@@ -66,4 +66,8 @@ class RegisteredUserController extends Controller
         // Redirect back with a success message
         return redirect()->back()->with('success', 'Product added to your account successfully!');
     }
+    public function CreateTicket()
+    {
+        
+    }
 }

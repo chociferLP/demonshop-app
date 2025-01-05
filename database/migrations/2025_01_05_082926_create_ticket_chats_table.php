@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('ticket_chats', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('admin_id');
+            $table->text('chat');
             $table->timestamps();
         });
     }

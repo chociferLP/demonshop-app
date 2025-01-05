@@ -1,0 +1,49 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class ticketController extends Controller
+{
+    public function store()
+    {
+
+    }
+    public function index()
+    {
+
+    }
+    public function show()
+    {
+
+    }
+    public function update()
+    {
+
+    }
+    public function destroy()
+    {
+
+    }
+    public function changeStatus()
+    {
+
+    }
+    public function search()
+    {
+
+    }
+    public function uploadAttachment()
+    {
+
+    }
+    public function addContent()
+    {
+
+    }
+    public function export()
+    {
+
+    }
+}

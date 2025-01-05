@@ -1,13 +1,14 @@
 <?php
 
-use App\Http\Controllers\EditUserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ticketController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\EditUserController;
 use App\Http\Controllers\Panel\UserController;
 use App\Http\Controllers\UserEditorController;
 use App\Http\Controllers\Panel\CommentController;
@@ -76,15 +77,33 @@ Route::get('/products/search', [ProductController::class, 'search'])->name('prod
 Route::post('/cart/item/{cart}/{product}', [CartController::class, 'additem'])->name('item.add');
 Route::post('/cart', [CartController::class, 'add'])->name('cart.add');
 Route::get('/cart/index', [CartController::class, 'show'])->middleware(['auth'])->name('cart.show');
-Route::get('/cart/list',[CartController::class, 'showPanel'])->name('cart.panel');
+Route::get('/cart/list', [CartController::class, 'showPanel'])->name('cart.panel');
 
 
 Route::post('/order/{ShoppingCart}', [OrderController::class, 'AddOrder'])->name('order.add');
 Route::get('/order/index', [OrderController::class, 'index'])->name('order.index');
-Route::post('/creatcart',[HomeController::class,'creatcart'])->name('cart.button');
+Route::post('/creatcart', [HomeController::class, 'creatcart'])->name('cart.button');
 
-Route::get('/user/edit',[EditUserController::class,'page'])->name('edit.user');
-Route::post('/user/edit',[EditUserController::class,'update'])->middleware('auth')->name('update.user');
-Route::delete('/cart/destroy/{CartItems}',[CartController::class,'destroyItem'])->name('destroy.cart');
+Route::get('/user/edit', [EditUserController::class, 'page'])->name('edit.user');
+Route::post('/user/edit', [EditUserController::class, 'update'])->middleware('auth')->name('update.user');
+Route::delete('/cart/destroy/{CartItems}', [CartController::class, 'destroyItem'])->name('destroy.cart');
+
+
+
+
+
+
+
+
+
+
+
+Route::get('/ticket/index', [ticketController::class, 'index'])->name('ticket.index');
+
+
+
+
+
+
 
 require __DIR__ . '/auth.php';

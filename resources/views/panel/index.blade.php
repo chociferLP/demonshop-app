@@ -81,7 +81,7 @@
                                 <li><a href="{{ route('admin.user.index') }}">کاربران</a></li>
                                 <li><a href="{{ route('product.show') }}">محصولات</a></li>
                                 <li><a href="{{ route('category.index') }}">دسته بندی ها</a></li>
-                                <li><a href=""></a></li>
+                                <li><a href="{{ route('ticket.index') }}">تیکت ها</a></li>
                             </ul>
                         </li>
                     @endif

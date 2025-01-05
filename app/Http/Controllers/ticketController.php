@@ -12,7 +12,7 @@ class ticketController extends Controller
     }
     public function index()
     {
-
+        return view('panel.ticket.index');
     }
     public function show()
     {

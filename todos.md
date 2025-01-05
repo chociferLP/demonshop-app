@@ -59,7 +59,7 @@
                                                                                                         |
                                                                                                         |
                                                                                                         |
-    - [++] ساخت متد ها **( <store> , <index> , <show> , <update> , <destroy> , <changeStatus> )** <-------|
+    - [++] ساخت متد ها **( <store> , <index> , <show> , <update> , <destroy> , <changeStatus> )** <-----|
                                                     |
                                                     |
                                                     |
@@ -67,7 +67,7 @@
                                                    \|/
                       **( <search> , <uploadAttachment> , <addContent> , <export> )**  
         - [] ساخت رووت ها برای متد های تیکت
-    - [] ساخت مدل های تیکت ( <User> , <Category> , <Ticket> )
+    - [*] ساخت مدل های تیکت ( <User> , <Category> , <Ticket> )
     - [] ساخت جدول پیام های تیکت در دیتا بیس <------------------------------------------------------------|
 |         id => **{{ primery key }}**                                                                     |
 |         admin_id => **{{ id of admin chated with user <Defult = UserOne > }}**                          |

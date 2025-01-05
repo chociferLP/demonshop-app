@@ -58,6 +58,9 @@
                             @csrf
                             <button class="btn">مشخصات کاربر</button>
                         </form>
+                        <form action="{{ route('ticket.index') }}" method="GET">
+                            <button class="btn">تیکت</button>
+                        </form>
                     </div>
                 </div>
                 <ul class="metismenu" id="menu">
@@ -81,7 +84,7 @@
                                 <li><a href="{{ route('admin.user.index') }}">کاربران</a></li>
                                 <li><a href="{{ route('product.show') }}">محصولات</a></li>
                                 <li><a href="{{ route('category.index') }}">دسته بندی ها</a></li>
-                                <li><a href="{{ route('ticket.index') }}">تیکت ها</a></li>
+                                {{-- <li><a href="{{ route('ticket.index') }}">تیکت ها</a></li> --}}
                             </ul>
                         </li>
                     @endif

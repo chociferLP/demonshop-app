@@ -46,8 +46,6 @@
         id => **{{ Primary key }}**                                         |                           |
         user_id => **{{ Foreign key for the user creating the ticket }}**   |                           |
         title => **{{ Ticket title }}**                                     |                           |       
-        description => **{{ Ticket details }}**                             |                           |
-        priority => **{{ Enum _(low, medium, high)_ }}**                    |                           |
         status => **{{ Enum _(open, in-progress, closed)_ }}**              |                           |
         category_id => **{{ Foreign key for category }}**                   |                           |
         attachment => **{{ File path for attachments }}**                   |                           |
@@ -70,8 +68,13 @@
                       **( <search> , <uploadAttachment> , <addContent> , <export> )**  
         - [] ساخت رووت ها برای متد های تیکت
     - [] ساخت مدل های تیکت ( <User> , <Category> , <Ticket> )
-
-
+|    - [] ساخت جدول پیام های تیکت در دیتا بیس <-----------------------------------------------------------|
+|         id => **{{ primery key }}**                                                                     |
+|         admin_id => **{{ id of admin chated with user <Defult = UserOne > }}**                          |
+|         chat => **{{ content of user and admin's chat }}**                                              |                                            
+|                                                                                                         |
+|                                                                                                         |
+|---------------------------------------------------------------------------------------------------------|
 
 
 

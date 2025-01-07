@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class ticketController extends Controller
 {
     public function store()
     {
+        $category = Category::all();
         $user = auth()->id();
-        return view('panel.ticket.create',compact('user'));
+        return view('panel.ticket.create',compact('user','category'));
     }
     public function index()
     {

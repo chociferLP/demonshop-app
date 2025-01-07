@@ -9,6 +9,6 @@
 
 
     <form action="{{ route('ticket.store', $user) }}" method="GET">
-        <button style="margin-right: 110px" class="btn btn-primary">ساخت تیکت</button>
+        <button style="margin-right: 110px" class="btn btn-primary">ساخت تیکت جدید +</button>
     </form>
 @endsection

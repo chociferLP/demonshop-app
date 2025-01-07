@@ -8,11 +8,12 @@ class ticketController extends Controller
 {
     public function store()
     {
-
+        $user = auth()->id();
+        return view('panel.ticket.create',compact('user'));
     }
     public function index()
     {
-        
+
         $user = auth()->id();
         return view('panel.ticket.index',compact('user'));
     }

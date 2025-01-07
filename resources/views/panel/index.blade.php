@@ -21,6 +21,18 @@
 </head>
 
 <body>
+    <style>
+        .custom-button-location {
+            position: absolute; /* Adjust position type */
+            top: 100px;          /* Vertical position */
+            left: 100px;        /* Horizontal position */
+            background-color: #007bff; /* Optional: Styling */
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
     <div id="preloader">
         <div class="loader">
             <span>{{ auth()->user()->role }}</span><span>{{ auth()->user()->name }}</span>

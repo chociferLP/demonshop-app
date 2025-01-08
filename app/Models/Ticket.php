@@ -10,4 +10,12 @@ class Ticket extends Model
 {
     use HasFactory;
     protected $guarded = [];
+    public function user()
+    {
+        $this->belongsTo(User::class,'user_id');
+    }
+    public function chat()
+    {
+        $this->hasMany(TicketChat::class,'tickets_id');
+    }
 }

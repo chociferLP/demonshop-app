@@ -89,20 +89,11 @@ Route::post('/user/edit', [EditUserController::class, 'update'])->middleware('au
 Route::delete('/cart/destroy/{CartItems}', [CartController::class, 'destroyItem'])->name('destroy.cart');
 
 
-
-
-
-
-
-
-
-
-
 Route::get('/ticket/index/{user}', [ticketController::class, 'index'])->name('ticket.index');
 Route::get('/ticket/create/{user}',[ticketController::class,'store'])->name('ticket.store');
 Route::post('/ticket/create/{user}',[ticketController::class,'upload'])->name('ticket.upload');
 
-
+Route::get('/ticket/show/admin',[ticketController::class,'show'])->name('ticket.admin');
 
 
 

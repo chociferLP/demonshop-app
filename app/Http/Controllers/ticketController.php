@@ -19,15 +19,15 @@ class ticketController extends Controller
     public function upload(User $user, Request $request)
     {
         $user = auth()->id();
-        $tick = Ticket::where('id');
-        Ticket::create([
+
+       $ticket = Ticket::create([
             'user_id' => $user,
             'title' => $request->input('title'),
             'status' => 'open',
             'category_id' => $request->input('category_id')
         ]);
         TicketChat::create([
-            'tickets_id' => $user,
+            'tickets_id' => $ticket->id,
             'admin_id' => 1,
             'chat'=>$request->input('matn')
         ]);
@@ -36,13 +36,13 @@ class ticketController extends Controller
     }
     public function index()
     {
-
         $user = auth()->id();
-        return view('panel.ticket.index', compact('user'));
+        $tickets = Ticket::where('user_id', $user)->get();
+        return view('panel.ticket.index', compact('user','tickets'));
     }
     public function show()
     {
-
+        return view();
     }
     public function update()
     {

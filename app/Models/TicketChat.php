@@ -10,4 +10,8 @@ class TicketChat extends Model
 {
     use HasFactory;
     protected $guarded = [];
+    public function ticket()
+    {
+        $this->belongsTo(Ticket::class,'tickets_id');
+    }
 }

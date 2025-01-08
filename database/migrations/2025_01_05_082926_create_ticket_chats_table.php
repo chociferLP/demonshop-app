@@ -13,7 +13,9 @@ return new class extends Migration
     {
         Schema::create('ticket_chats', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('admin_id');
+            $table->unsignedBigInteger('tickets_id');
+            $table->foreign('tickets_id')->references('id')->on('tickets');
+            $table->bigInteger('admin_id')->nullable();
             $table->text('chat');
             $table->timestamps();
         });

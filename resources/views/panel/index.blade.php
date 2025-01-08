@@ -21,6 +21,7 @@
 </head>
 
 <body>
+    
     <style>
         .custom-button-location {
             position: absolute; /* Adjust position type */
@@ -70,7 +71,8 @@
                             @csrf
                             <button class="btn">مشخصات کاربر</button>
                         </form>
-                        <form action="{{ route('ticket.index',$user) }}" method="GET">
+
+                        <form action="{{ route('ticket.index',auth()->user()) }}" method="GET">
                             <button class="btn">تیکت</button>
                         </form>
                     </div>

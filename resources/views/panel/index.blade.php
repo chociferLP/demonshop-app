@@ -14,14 +14,13 @@
     <meta property="og:image" content="https://boltz.dexignzone.com/xhtml/social-image.png">
     <meta name="format-detection" content="telephone=no">
     <title>پروفایل</title>
-    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
     <link href="{{ asset('vendor/owl-carousel/owl.carousel.css" rel="stylesheet') }}">
     <link href="{{ asset('vendor/jquery-nice-select/css/nice-select.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
 
 <body>
-    
+
     <style>
         .custom-button-location {
             position: absolute; /* Adjust position type */
@@ -100,6 +99,12 @@
                                 <li><a href="{{ route('category.index') }}">دسته بندی ها</a></li>
                                 <li><a href=""></a></li>
                             </ul>
+                        </li>
+                        <li>
+                            <a class="ai-icon" href="{{ route('ticket.admin') }}" aria-expanded="false">
+                                <i class="flaticon-041-graph"></i>
+                                <span class="nav-text">تمامی تیکت ها</span>
+                            </a>
                         </li>
                     @endif
                 </ul>

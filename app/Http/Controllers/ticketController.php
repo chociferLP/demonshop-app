@@ -20,7 +20,7 @@ class ticketController extends Controller
     {
         $user = auth()->id();
 
-       $ticket = Ticket::create([
+        $ticket = Ticket::create([
             'user_id' => $user,
             'title' => $request->input('title'),
             'status' => 'open',
@@ -29,7 +29,7 @@ class ticketController extends Controller
         TicketChat::create([
             'tickets_id' => $ticket->id,
             'admin_id' => 1,
-            'chat'=>$request->input('matn')
+            'chat' => $request->input('matn')
         ]);
 
         return redirect()->back();
@@ -38,14 +38,14 @@ class ticketController extends Controller
     {
         $user = auth()->id();
         $tickets = Ticket::where('user_id', $user)->get();
-        return view('panel.ticket.index', compact('user','tickets'));
+        return view('panel.ticket.index', compact('user', 'tickets'));
     }
     public function show()
     {
         $user = auth()->id();
         $tickets = Ticket::where('user_id', $user)->get();
         $tickets2 = TicketChat::all();
-        return view('panel.ticket.detail',compact('user','tickets','tickets2'));
+        return view('panel.ticket.detail', compact('user', 'tickets', 'tickets2'));
     }
     public function update()
     {
@@ -63,16 +63,9 @@ class ticketController extends Controller
     {
 
     }
-    public function uploadAttachment()
+    public function admin()
     {
-
-    }
-    public function addContent()
-    {
-
-    }
-    public function export()
-    {
-
+        $chat = TicketChat::all();
+        return view('panel.ticket.admin', compact('chat'));
     }
 }

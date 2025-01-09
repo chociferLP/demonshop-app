@@ -4,9 +4,6 @@
         <link rel="stylesheet" href="{{ asset('blog/css/style.css') }}">
     </x-slot>
     <br><br><br><br><br><br>
-    <form action="{{ route('ticket.store', $user) }}" method="GET">
-        <button style="margin-right: 110px" class="btn btn-primary">ساخت تیکت جدید +</button>
-    </form>
     <table style="background-color: rgb(201, 192, 255)" class="table">
         <thead role="rowgroup">
             <tr style="color: black" role="row" class="title-row">
@@ -19,7 +16,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($tickets2 as $ticket)
+            @foreach ($chat as $ticket)
                 <tr style="color: black" role="row" class="">
                     <td>{{ $ticket->id }}</td>
                     <td>{{ $ticket->id }}</td>

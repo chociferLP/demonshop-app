@@ -42,7 +42,10 @@ class ticketController extends Controller
     }
     public function show()
     {
-        return view();
+        $user = auth()->id();
+        $tickets = Ticket::where('user_id', $user)->get();
+        $tickets2 = TicketChat::all();
+        return view('panel.ticket.detail',compact('user','tickets','tickets2'));
     }
     public function update()
     {

@@ -29,11 +29,14 @@
                     <td>{{ $ticket->created_at }}</td>
                     <td>{{ $ticket->updated_at }}</td>
                     <td>
-                        <button style="background-color: rgb(119, 255, 85)" class="btn btn-btn-primary">متن و جزعیات</button>
+                        <form action="{{ route('ticket.show' ,$user) }}" method="GET">
+                            @csrf
+                            <button type="submit" style="background-color: rgb(0, 50, 126)" class="btn btn-btn-primary">متن و
+                                جزعیات</button>
+                        </form>
                     </td>
                 </tr>
             @endforeach
         </tbody>
-        {{-- {{ $tickets->links() }} --}}
     </table>
 @endsection

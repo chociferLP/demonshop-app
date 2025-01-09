@@ -93,7 +93,7 @@ Route::get('/ticket/index/{user}', [ticketController::class, 'index'])->name('ti
 Route::get('/ticket/create/{user}',[ticketController::class,'store'])->name('ticket.store');
 Route::post('/ticket/create/{user}',[ticketController::class,'upload'])->name('ticket.upload');
 
-Route::get('/ticket/show/admin',[ticketController::class,'show'])->name('ticket.admin');
+Route::get('/ticket/show/{user}',[ticketController::class,'show'])->name('ticket.show');
 
 
 

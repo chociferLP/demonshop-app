@@ -38,21 +38,21 @@
             <span>{{ auth()->user()->role }}</span><span>{{ auth()->user()->name }}</span>
         </div>
     </div>
-    <div id="main-wrapper">
-        <div class="nav-header">
+    <div style="background-color: rgb(225, 230, 175)" id="main-wrapper">
+        <div style="background-color: rgb(214, 175, 230)" class="nav-header">
             <div class="nav-control">
                 <div class="hamburger">
                     <span class="line"></span><span class="line"></span><span class="line"></span>
                 </div>
             </div>
         </div>
-        <div class="header">
+        <div style="background-color: rgb(214, 175, 230)" class="header">
             <div class="header-content">
                 <div class="collapse navbar-collapse justify-content-between"></div>
             </div>
         </div>
         <div class="deznav">
-            <div class="deznav-scroll">
+            <div style="background-color: rgb(214, 175, 230)" class="deznav-scroll">
                 <div class="dropdown header-profile">
                     <a class="nav-link" href="javascript:void(0);" role="button" data-bs-toggle="dropdown">
                         <div class="header-info">

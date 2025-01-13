@@ -19,7 +19,7 @@
                                 {{ \Carbon\Carbon::parse($notification->data['created_at'])->format('M d, Y h:i A') }}</span>
                         </div>
                         <p>
-                            شناسه تیکت : {{ $notification->data['ticket_id'] }}
+                            شناسه تیکت جدید : {{ $notification->data['ticket_id'] }}
                         </p>
                         <a href="{{ url('/ticket/show/' . $notification->data['ticket_id']) }}"
                             class="btn btn-sm btn-primary">مشاهده</a>

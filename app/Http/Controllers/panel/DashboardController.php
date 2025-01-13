@@ -16,6 +16,7 @@ class DashboardController extends Controller
 {
     public function index()
     {
+        $notifications = auth()->user()->notifications;
         $user = auth()->user();
         $users_count = User::count();
         $categories_count = Category::count();
@@ -26,7 +27,7 @@ class DashboardController extends Controller
                 return $query->where('user_id', auth()->user()->id);
             })->count();
         }
-        
+
         return view('panel.users.index', compact(
             'users_count',
             'categories_count',

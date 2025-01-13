@@ -7,6 +7,7 @@ use App\Models\Ticket;
 use App\Models\Category;
 use App\Models\TicketChat;
 use Illuminate\Http\Request;
+use App\Notifications\TicketCreatedNotification;
 
 class ticketController extends Controller
 {
@@ -31,6 +32,10 @@ class ticketController extends Controller
             'admin_id' => 1,
             'chat' => $request->input('matn')
         ]);
+        $admin = User::where('role', 'admin')->first();
+        if ($admin) {
+            $admin->notify(new TicketCreatedNotification($ticket));
+        }
 
         return redirect()->back();
     }
@@ -65,7 +70,8 @@ class ticketController extends Controller
     }
     public function admin()
     {
+        $notifications = auth()->user()->notifications;
         $chat = TicketChat::all();
-        return view('panel.ticket.admin', compact('chat'));
+        return view('panel.ticket.admin', compact('chat','notifications'));
     }
 }

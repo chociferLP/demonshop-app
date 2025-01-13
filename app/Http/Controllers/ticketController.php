@@ -52,22 +52,6 @@ class ticketController extends Controller
         $tickets2 = TicketChat::all();
         return view('panel.ticket.detail', compact('user', 'tickets', 'tickets2'));
     }
-    public function update()
-    {
-
-    }
-    public function destroy()
-    {
-
-    }
-    public function changeStatus()
-    {
-
-    }
-    public function search()
-    {
-
-    }
     public function admin()
     {
         $notifications = auth()->user()->notifications;
